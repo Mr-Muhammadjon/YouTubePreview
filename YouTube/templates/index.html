@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>YouTube Preview Images</title>
+       <script>
+  if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+  }
+  </script>
+</head>
+<body>
+<main>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row card-panel z-depth-3">
+            <div class="col s8">
+                 <div class="row">
+                     <div class="header">
+                         <h4>Video Link</h4>
+                     </div>
+                    <form class="col s12" action="" method="POST">
+                        {% csrf_token %}
+                       <div class="row">
+                        <div class="input-field col s10">
+                          <input value="" id="first_name2" name="link" type="text" class="validate">
+                          <label class="active" for="first_name2">YouTube Video Link</label>
+                        </div>
+                           <div class="col s2">
+                               <button type="submit" class="btn waves-effect orange">
+                                   <i class="material-icons">search</i>
+                               </button>
+                           </div>
+                      </div>
+                    </form>
+                  </div>
+            </div>
+            <div class="col s4">
+                 <div class="header">
+                         <h4>Video Preview</h4>
+                 </div>
+                <a href="https://img.youtube.com/vi/{{ link }}/maxresdefault.jpg" target="_blank">
+                    <img src="https://img.youtube.com/vi/{{ link }}/maxresdefault.jpg" class="responsive-img" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="row card-panel z-depth-3">
+             <div class="header">
+                 <h4>Video</h4>
+             </div>
+            <iframe width="100%" height="400"
+                    src="https://www.youtube.com/embed/{{ link   }}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write;
+                    encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+
+            </iframe>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

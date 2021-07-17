@@ -1,5 +1,5 @@
 """
-WSGI config for YouTube project.
+WSGI config for youtubepreview project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'YouTube.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'youtubepreview.settings')
 
 application = get_wsgi_application()
